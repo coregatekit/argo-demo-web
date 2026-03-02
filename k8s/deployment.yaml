@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: argodemo-web
-          image: ghcr.io/coregatekit/argo-demo-web:latest
+          image: ghcr.io/coregatekit/coregatekit/argo-demo-web:latest
           imagePullPolicy: Always
           resources:
             requests:
