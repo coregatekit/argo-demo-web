@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: argodemo-web
+spec:
+  replicas: 2
+  template:
+    spec:
+      containers:
+        - name: argodemo-web
+          resources:
+            requests:
+              memory: "64Mi"
+              cpu: "250m"
+              ephemeral-storage: "1Gi"
+            limits:
+              memory: "128Mi"
+              cpu: "500m"

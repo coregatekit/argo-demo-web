@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: argodemo-web
+spec:
+  rules:
+    - host: dev.argodemo-web.coregatekit.dev
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: argodemo-web
+                port:
+                  number: 3000
