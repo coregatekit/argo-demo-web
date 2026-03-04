@@ -4,7 +4,7 @@ metadata:
   name: argodemo-web
 spec:
   rules:
-    - host: dev.argodemo-web.coregatekit.dev
+    - host: argodemo-web-dev.coregate.dev
       http:
         paths:
           - path: /

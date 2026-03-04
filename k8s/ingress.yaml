@@ -7,7 +7,7 @@ metadata:
 spec:
   ingressClassName: cloudflare-tunnel
   rules:
-    - host: argodemo-web.coregatekit.dev
+    - host: argodemo-web.coregate.dev
       http:
         paths:
           - path: /
