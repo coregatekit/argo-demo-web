@@ -58,7 +58,7 @@ jobs:
       - name: Update image tag in develop
         run: |
           cd gitops/apps/demo-web/overlays/develop
-          sed -i "s/newTag: .*/newTag: $IMAGE_TAG/" kustomization.yaml
+          sed -i "s/newTag: .*/newTag: \"$IMAGE_TAG\"/" kustomization.yaml
 
       - name: Commit and Push changes
         run: |
