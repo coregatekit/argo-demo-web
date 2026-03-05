@@ -59,3 +59,14 @@ jobs:
         run: |
           cd gitops/apps/demo-web/overlays/develop
           sed -i "s/newTag: .*/newTag: $IMAGE_TAG/" kustomization.yaml
+
+      - name: Commit and Push changes
+        run: |
+          cd gitops
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+
+          git add apps/demo-web/overlays/develop/kustomization.yaml
+          git commit -m "chore: update demo-web image to $IMAGE_TAG (develop)" || echo "No changes"
+
+          git push
