@@ -68,7 +68,7 @@ jobs:
 
       - name: Update image tag in production
         run: |
-          cd gitops/apps/demo-web/overlays/production
+          cd gitops/apps/demo-web/overlays/prod
           sed -i "s/newTag: .*/newTag: \"${{ needs.build.outputs.tag }}\"/" kustomization.yaml
 
       - name: Commit and Push changes
@@ -77,7 +77,7 @@ jobs:
           git config user.name "github-actions"
           git config user.email "actions@github.com"
 
-          git add apps/demo-web/overlays/production/kustomization.yaml
+          git add apps/demo-web/overlays/prod/kustomization.yaml
           git commit -m "Update image tag to ${{ needs.build.outputs.tag }} for production" || echo "No changes"
 
           git push origin main
